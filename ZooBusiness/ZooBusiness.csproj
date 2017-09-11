@@ -40,12 +40,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animalerie\Alimentation\ICarnivore.cs" />
+    <Compile Include="Animalerie\Alimentation\IGranivore.cs" />
+    <Compile Include="Animalerie\Alimentation\IHerbivore.cs" />
+    <Compile Include="Animalerie\Alimentation\IOmnivore.cs" />
+    <Compile Include="Animalerie\Animaux\AAnimal.cs" />
+    <Compile Include="Animalerie\Animaux\Elephant.cs" />
+    <Compile Include="Animalerie\Animaux\Giraffe.cs" />
+    <Compile Include="Animalerie\Animaux\Lion.cs" />
+    <Compile Include="Animalerie\Animaux\Mammiferes.cs" />
+    <Compile Include="Animalerie\Animaux\Oiseaux.cs" />
+    <Compile Include="Animalerie\Animaux\Perroquet.cs" />
+    <Compile Include="Animalerie\Animaux\PoissonClown.cs" />
+    <Compile Include="Animalerie\Animaux\Poissons.cs" />
+    <Compile Include="Animalerie\Animaux\Reptiles.cs" />
+    <Compile Include="Animalerie\Animaux\Vipere.cs" />
+    <Compile Include="Animalerie\Nourriture\Graine.cs" />
+    <Compile Include="Animalerie\Nourriture\Herbe.cs" />
+    <Compile Include="Animalerie\Nourriture\INourriture.cs" />
+    <Compile Include="Animalerie\Nourriture\Viande.cs" />
+    <Compile Include="Animalerie\Soins\Anesthesiant.cs" />
+    <Compile Include="Animalerie\Soins\ASoins.cs" />
+    <Compile Include="Animalerie\Soins\Bandages.cs" />
+    <Compile Include="Animalerie\Soins\Medicaments.cs" />
     <Compile Include="OrganisationZoo\Models\Directeur.cs" />
     <Compile Include="OrganisationZoo\Models\Employe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Animalerie\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
