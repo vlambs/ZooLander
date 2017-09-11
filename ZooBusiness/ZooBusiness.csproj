@@ -40,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrganisationZoo\Models\Directeur.cs" />
-    <Compile Include="OrganisationZoo\Models\Employe.cs" />
+    <Compile Include="OrganisationZoo\Controllers\Gestionnaire.cs" />
+    <Compile Include="OrganisationZoo\Models\Employes\Directeur.cs" />
+    <Compile Include="OrganisationZoo\Models\Employes\Employe.cs" />
+    <Compile Include="OrganisationZoo\Models\Employes\Entretien.cs" />
+    <Compile Include="OrganisationZoo\Models\Employes\Magasinier.cs" />
+    <Compile Include="OrganisationZoo\Models\Employes\Soigneur.cs" />
+    <Compile Include="OrganisationZoo\Models\Employes\Tresorier.cs" />
+    <Compile Include="OrganisationZoo\Models\ResourcesZoo\Entree.cs" />
+    <Compile Include="OrganisationZoo\Models\ResourcesZoo\EntreeReduit.cs" />
+    <Compile Include="OrganisationZoo\Models\ResourcesZoo\Stock.cs" />
+    <Compile Include="OrganisationZoo\Models\ResourcesZoo\Tresorerie.cs" />
+    <Compile Include="OrganisationZoo\Models\ResourcesZoo\Visiteur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooBusiness.Models
+namespace ZooBusiness.OrganisationZoo.Models
 {
-    public class Employe
+    public class Directeur 
     {
     }
 }

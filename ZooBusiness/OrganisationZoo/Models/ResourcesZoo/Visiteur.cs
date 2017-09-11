@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooBusiness.Models
+namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
 {
-    public class Directeur : Employe
+    public class Visiteur
     {
+        public Entree Ticket { get; private set; }
     }
 }
