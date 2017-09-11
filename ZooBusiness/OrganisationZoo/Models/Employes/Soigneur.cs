@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.OrganisationZoo.Models
 {
-    public class Soigneur
+    public class Soigneur : Employe
     {
+        public Soigneur() : base()
+        {
+            
+        }
     }
 }

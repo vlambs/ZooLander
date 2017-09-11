@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
 {
-    public class EntreeReduit : Entree
+    public class EntreeReduite : Entree
     {
 
         public override int Prix { get { return basePrix/2; } }

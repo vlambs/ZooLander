@@ -8,6 +8,8 @@ namespace ZooBusiness.OrganisationZoo.Models
 {
     public class Entretien : Employe
     {
-        
+        public Entretien() : base()
+        {
+        }
     }
 }
