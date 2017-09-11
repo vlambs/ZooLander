@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie
 {
-    class Vipere
+    public class Vipere : Reptiles
     {
+        public override string presentation()
+        {
+            string res = "Je suis " + this.nom + " la vipere de " + this.poids.ToString() + "kg et de " + this.taille.ToString() + ". J'ai " + this.pattes.ToString() + " pattes.";
+            return res;
+        }
     }
 }

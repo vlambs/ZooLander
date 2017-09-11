@@ -75,8 +75,6 @@
     <Compile Include="Animalerie\Soins\ASoins.cs" />
     <Compile Include="Animalerie\Soins\Bandages.cs" />
     <Compile Include="Animalerie\Soins\Medicaments.cs" />
-    <Compile Include="OrganisationZoo\Models\Directeur.cs" />
-    <Compile Include="OrganisationZoo\Models\Employe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

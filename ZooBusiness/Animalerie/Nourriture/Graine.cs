@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie.Nourriture
 {
-    class Graine
+    public class Graine
     {
     }
 }

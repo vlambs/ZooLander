@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie
 {
-    abstract class Mammiferes
+    public abstract class Mammiferes : AAnimal
     {
+        public abstract string presentation();
     }
 }

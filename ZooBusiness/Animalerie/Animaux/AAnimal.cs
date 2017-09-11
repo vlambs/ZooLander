@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie
 {
-    abstract class AAnimal
+    public abstract class AAnimal
     {
         public string nom { get; set; }
         public float poids { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie.Alimentation
 {
-    interface IOmnivore
+    public interface IOmnivore
     {
     }
 }
