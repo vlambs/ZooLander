@@ -8,5 +8,10 @@ namespace ZooBusiness.OrganisationZoo.Models
 {
     public class Tresorier : Employe
     {
+
+        public Tresorier() : base()
+        {
+
+        }
     }
 }

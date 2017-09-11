@@ -48,7 +48,7 @@
     <Compile Include="OrganisationZoo\Models\Employes\Soigneur.cs" />
     <Compile Include="OrganisationZoo\Models\Employes\Tresorier.cs" />
     <Compile Include="OrganisationZoo\Models\ResourcesZoo\Entree.cs" />
-    <Compile Include="OrganisationZoo\Models\ResourcesZoo\EntreeReduit.cs" />
+    <Compile Include="OrganisationZoo\Models\ResourcesZoo\EntreeReduite.cs" />
     <Compile Include="OrganisationZoo\Models\ResourcesZoo\Stock.cs" />
     <Compile Include="OrganisationZoo\Models\ResourcesZoo\Tresorerie.cs" />
     <Compile Include="OrganisationZoo\Models\ResourcesZoo\Visiteur.cs" />

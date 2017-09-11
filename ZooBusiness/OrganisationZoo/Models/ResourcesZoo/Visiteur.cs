@@ -9,5 +9,12 @@ namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
     public class Visiteur
     {
         public Entree Ticket { get; private set; }
+
+        public int Age { get; private set; }
+
+        public Entree AcheterTicket()
+        {
+            return Ticket = this.Age < 16 ? new EntreeReduite() : new Entree();
+        }
     }
 }

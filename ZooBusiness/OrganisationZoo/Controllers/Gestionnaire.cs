@@ -10,12 +10,18 @@ namespace ZooBusiness.OrganisationZoo.Controllers
 {
     public class Gestionnaire
     {
-        public IEnumerable<Visiteur> Visiteurs { get; private set; }
+        public List<Visiteur> Visiteurs { get; private set; }
 
         public Stock Stock { get; private set; }
 
         public Tresorerie Tresorerie { get; private set; }
 
         public Directeur Directeur { get; }
+
+        public void VendrePlace(Visiteur v)
+        {
+            Tresorerie.ComptabiliserEntree(v.AcheterTicket());
+            Visiteurs.Add(v);
+        }
     }
 }

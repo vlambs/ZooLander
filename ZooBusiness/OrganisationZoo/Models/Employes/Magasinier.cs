@@ -8,5 +8,9 @@ namespace ZooBusiness.OrganisationZoo.Models
 {
     public class Magasinier : Employe
     {
+        public Magasinier() : base()
+        {
+
+        }
     }
 }

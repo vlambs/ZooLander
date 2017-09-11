@@ -6,10 +6,23 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
 {
-    public static class Tresorerie
+    public class Tresorerie
     {
-        public static int Caisse { get; private set; }
+        public Tresorier Tresorier {get; private set; }
 
-        public static int NombreEntrees { get; private set; }
+        public int Caisse { get; private set; }
+
+        public int NombreEntrees { get; private set; }
+
+        public void ComptabiliserEntree(Entree entree)
+        {
+            Caisse += entree.Prix;
+            NombreEntrees += 1;
+        }
+
+        public void Depenser(int depense)
+        {
+            Caisse -= depense;
+        }
     }
 }
