@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooLander", "ZooLander\ZooLander.csproj", "{70E4229F-649B-4906-A421-EFED3DBD79A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01D0B7F4-6084-42F9-B443-13A7C24AF578} = {01D0B7F4-6084-42F9-B443-13A7C24AF578}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooBusiness", "ZooBusiness\ZooBusiness.csproj", "{01D0B7F4-6084-42F9-B443-13A7C24AF578}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{70E4229F-649B-4906-A421-EFED3DBD79A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70E4229F-649B-4906-A421-EFED3DBD79A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70E4229F-649B-4906-A421-EFED3DBD79A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D0B7F4-6084-42F9-B443-13A7C24AF578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D0B7F4-6084-42F9-B443-13A7C24AF578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D0B7F4-6084-42F9-B443-13A7C24AF578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D0B7F4-6084-42F9-B443-13A7C24AF578}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
