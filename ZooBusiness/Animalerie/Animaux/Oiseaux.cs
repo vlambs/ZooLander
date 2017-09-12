@@ -8,6 +8,14 @@ namespace ZooBusiness.Animalerie
 {
     public abstract class Oiseaux : AAnimal
     {
-        public abstract string presentation();
+        public Oiseaux(string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(nom,sexe,age,poids,taille,nbpattes)
+        {
+
+        }
+
+        public Oiseaux(Oiseaux pere, Oiseaux mere, string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(pere,mere,nom, sexe, age, poids, taille, nbpattes)
+        {
+
+        }
     }
 }
