@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animalerie\Animaux\RandomUtility.cs" />
     <Compile Include="OrganisationZoo\Controllers\Gestionnaire.cs" />
     <Compile Include="OrganisationZoo\Models\Employes\Directeur.cs" />
     <Compile Include="OrganisationZoo\Models\Employes\Employe.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="Animalerie\Animaux\Mammiferes.cs" />
     <Compile Include="Animalerie\Animaux\Oiseaux.cs" />
     <Compile Include="Animalerie\Animaux\Perroquet.cs" />
-    <Compile Include="Animalerie\Animaux\PoissonClown.cs" />
+    <Compile Include="Animalerie\Animaux\PoissonChat.cs" />
     <Compile Include="Animalerie\Animaux\Poissons.cs" />
     <Compile Include="Animalerie\Animaux\Reptiles.cs" />
     <Compile Include="Animalerie\Animaux\Vipere.cs" />

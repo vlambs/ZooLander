@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie
 {
-    public class Perroquet : Oiseaux
+    public class PoissonChat : Poissons
     {
         public override string presentation()
         {
-            string res = "Je suis " + this.nom + " le perroquet de " + this.poids.ToString() + "kg et de " + this.taille.ToString() + ". J'ai " + this.pattes.ToString() + " pattes.";
+            string res = "Je suis " + this.nom + " le poisson clown de " + this.poids.ToString() + "kg et de " + this.taille.ToString() + ". J'ai " + this.pattes.ToString() + " pattes.";
             return res;
         }
-        public static List<Perroquet> listePerroquets;
-        public void Reproduction(Perroquet e2)
+        public static List<PoissonChat> listePoissonsChat;
+        public void Reproduction(PoissonChat e2)
         {
             Random rnd = new Random();
             string pere;
@@ -32,14 +32,14 @@ namespace ZooBusiness.Animalerie
                     mere = this.nom;
                 }
                 Task t = new Task(() => AjoutAnimal(pere, mere));
-                Task.Delay(1000);
+                Task.Delay(100);
                 t.Start();
             }
         }
         public static void AjoutAnimal(string pere, string mere)
         {
             // Ajout d'un elephant
-            listePerroquets.Add(new Perroquet(pere, mere));
+            listePoissonsChat.Add(new PoissonChat(pere, mere));
         }
 
         public override void Reproduction(AAnimal a2)
@@ -47,10 +47,10 @@ namespace ZooBusiness.Animalerie
             if (this.Equals(a2))
                 throw new Exception("Cet animal ne peut pas se reproduire avec lui même, beurk...");
             else
-                this.Reproduction((Perroquet)a2);
+                this.Reproduction((PoissonChat)a2);
         }
 
-        public Perroquet(string pere, string mere)
+        public PoissonChat(string pere, string mere)
         {
             this.pere = pere;
             this.mere = mere;
@@ -62,18 +62,18 @@ namespace ZooBusiness.Animalerie
             else
                 this.sexe = "male";
             this.poids = rnd.Next(1, 2);
-            this.taille = rnd.Next(3, 5);
-            this.pattes = 4;
+            this.taille = rnd.Next(3, 4);
+            this.pattes = 0;
             this.niveauFaim = 3;
         }
-        public Perroquet(string nom, string sexe, int age, int poids, int taille)
+        public PoissonChat(string nom, string sexe, int age, int poids, int taille)
         {
             this.nom = nom;
             this.sexe = sexe;
             this.age = age;
             this.poids = poids;
             this.taille = taille;
-            this.pattes = 2;
+            this.pattes = 4;
             this.niveauFaim = 3;
         }
 
@@ -84,7 +84,7 @@ namespace ZooBusiness.Animalerie
             {
                 return false;
             }
-            Perroquet elep = obj as Perroquet;
+            PoissonChat elep = obj as PoissonChat;
             if (this.nom == elep.nom && this.mere == elep.mere && this.pere == elep.pere && this.age == elep.age)
             {
                 return true;
