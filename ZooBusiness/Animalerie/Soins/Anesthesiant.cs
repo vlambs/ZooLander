@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie.Soins
 {
-    public class Anesthesiant
+    public class Anesthesiant : ASoins
     {
     }
 }

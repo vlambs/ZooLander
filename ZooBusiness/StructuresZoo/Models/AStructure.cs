@@ -16,28 +16,20 @@ namespace ZooBusiness.StructuresZoo.Models
     {
         private static int id = 0;
 
+        public static List<AStructure<T>> Structures { get; private set; } = new List<AStructure<T>>();
+
         public int Id { get; private set; }
-        public TypeEnvironnement Environnement { get; private set; }
+        public TypeEnvironnement Environnement { get; protected set; }
 
-        public TypeFermeture Fermeture { get; private set; }
+        public TypeFermeture Fermeture { get; protected set; }
 
-        public EtatStructure Etat { get; private set; } = EtatStructure.Parfait;
+        public EtatStructure Etat { get; protected set; } = EtatStructure.Parfait;
 
-        public List<T> Animaux { get; private set; }
+        public List<T> Animaux { get; protected set; } = new List<T>();
 
         public AStructure()
         {
             Id = ++id;
-        }
-
-        public void AjouterAnimal(T animal)
-        {
-            Animaux.Add(animal);
-        }
-
-        public void RetirerAnimal(T animal)
-        {
-            Animaux.Remove(animal);
         }
 
     }

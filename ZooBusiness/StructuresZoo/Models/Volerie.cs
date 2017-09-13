@@ -7,12 +7,12 @@ using ZooBusiness.Animalerie;
 
 namespace ZooBusiness.StructuresZoo.Models
 {
-    public class Enclos : AStructure<Mammiferes>
+    public class Volerie : AStructure<Oiseaux>
     {
-        public Enclos()
+        public Volerie()
         {
-            this.Environnement = TypeEnvironnement.Herbe;
-            this.Fermeture = TypeFermeture.Barrière;
+            this.Environnement = TypeEnvironnement.Branchages;
+            this.Fermeture = TypeFermeture.Cage;
         }
     }
 }

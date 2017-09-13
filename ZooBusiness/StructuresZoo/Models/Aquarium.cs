@@ -7,12 +7,12 @@ using ZooBusiness.Animalerie;
 
 namespace ZooBusiness.StructuresZoo.Models
 {
-    public class Enclos : AStructure<Mammiferes>
+    public class Aquarium : AStructure<Poissons>
     {
-        public Enclos()
+        public Aquarium()
         {
-            this.Environnement = TypeEnvironnement.Herbe;
-            this.Fermeture = TypeFermeture.Barrière;
+            this.Environnement = TypeEnvironnement.Eau;
+            this.Fermeture = TypeFermeture.Verre;
         }
     }
 }

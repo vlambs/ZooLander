@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooBusiness.Animalerie.Alimentation;
+using ZooBusiness.Animalerie.Nourriture;
+using ZooBusiness.Animalerie.Soins;
 
 namespace ZooBusiness.Animalerie
 {
     public enum NiveauFaim {Affame, Faim,Bien,Repu}
     public enum NiveauSante { Malade,Blesse,Bien }
     public enum Sexe { Male, Femelle,Hermaphrodite }
-    public abstract class AAnimal<T>
+    public abstract class AAnimal<T> 
     {
         public static List<AAnimal<T>> Congeneres { get; private set; } = new List<AAnimal<T>>();
-
 
         public string Nom { get; set; }
         public float Poids { get; set; }
@@ -74,6 +76,10 @@ namespace ZooBusiness.Animalerie
             return (AAnimal<T>)Activator.CreateInstance(typeof(T), new object[] { pere,mere });
 
         }
+
+        public abstract void Nourrir(INourriture food);
+
+        public abstract void Soigner(ASoins soin);
 
         public override string ToString()
         {

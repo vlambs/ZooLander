@@ -53,10 +53,9 @@
     <Compile Include="OrganisationZoo\Models\ResourcesZoo\Stock.cs" />
     <Compile Include="OrganisationZoo\Models\ResourcesZoo\Tresorerie.cs" />
     <Compile Include="OrganisationZoo\Models\ResourcesZoo\Visiteur.cs" />
-    <Compile Include="Animalerie\Alimentation\ICarnivore.cs" />
-    <Compile Include="Animalerie\Alimentation\IGranivore.cs" />
-    <Compile Include="Animalerie\Alimentation\IHerbivore.cs" />
-    <Compile Include="Animalerie\Alimentation\IOmnivore.cs" />
+    <Compile Include="Animalerie\Alimentation\IAnimal.cs" />
+    <Compile Include="Animalerie\Alimentation\IGraine.cs" />
+    <Compile Include="Animalerie\Alimentation\IVegetal.cs" />
     <Compile Include="Animalerie\Animaux\AAnimal.cs" />
     <Compile Include="Animalerie\Animaux\Elephant.cs" />
     <Compile Include="Animalerie\Animaux\Giraffe.cs" />
@@ -77,8 +76,11 @@
     <Compile Include="Animalerie\Soins\Bandages.cs" />
     <Compile Include="Animalerie\Soins\Medicaments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StructuresZoo\Models\Aquarium.cs" />
     <Compile Include="StructuresZoo\Models\AStructure.cs" />
     <Compile Include="StructuresZoo\Models\Enclos.cs" />
+    <Compile Include="StructuresZoo\Models\Vivarium.cs" />
+    <Compile Include="StructuresZoo\Models\Volerie.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
