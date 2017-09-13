@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie
 {
-    public abstract class Oiseaux : AAnimal
+    public abstract class Oiseaux : AAnimal<Oiseaux>
     {
-        public Oiseaux(string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(nom,sexe,age,poids,taille,nbpattes)
-        {
+        public int NombrePattes { get; set; }
 
+        public Oiseaux(string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(nom,sexe,age,poids,taille)
+        {
+            NombrePattes = nbpattes;
         }
 
-        public Oiseaux(Oiseaux pere, Oiseaux mere, string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(pere,mere,nom, sexe, age, poids, taille, nbpattes)
+        public Oiseaux(Oiseaux pere, Oiseaux mere, string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(pere,mere,nom, sexe, age, poids, taille)
         {
-
+            NombrePattes = nbpattes;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace ZooBusiness.OrganisationZoo.Models
 
         public Employe()
         {
-            Id = ++Employe.id;
+            Id = ++id;
         }
     }
 }

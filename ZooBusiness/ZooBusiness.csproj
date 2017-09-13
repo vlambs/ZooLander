@@ -77,6 +77,8 @@
     <Compile Include="Animalerie\Soins\Bandages.cs" />
     <Compile Include="Animalerie\Soins\Medicaments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StructuresZoo\Models\AStructure.cs" />
+    <Compile Include="StructuresZoo\Models\Enclos.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

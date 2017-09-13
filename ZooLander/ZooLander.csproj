@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZooBusiness\ZooBusiness.csproj">
+      <Project>{01D0B7F4-6084-42F9-B443-13A7C24AF578}</Project>
+      <Name>ZooBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

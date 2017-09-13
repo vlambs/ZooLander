@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie
 {
-    public abstract class Mammiferes : AAnimal
+    public abstract class Mammiferes : AAnimal<Mammiferes>
     {
-        public Mammiferes(string nom,Sexe sexe,int age,int poids,int taille, int nbPattes) : base(nom,sexe,age,poids,taille,nbPattes)
-        {
+        public int NombrePattes { get; set; }
 
+        public Mammiferes(string nom,Sexe sexe,int age,int poids,int taille, int nbPattes) : base(nom,sexe,age,poids,taille)
+        {
+            NombrePattes = nbPattes;
         }
 
-        public Mammiferes(Mammiferes pere, Mammiferes mere,string nom, Sexe sexe, int age, int poids, int taille,int nbPattes) : base(pere,mere,nom, sexe, age, poids, taille, nbPattes)
+        public Mammiferes(Mammiferes pere, Mammiferes mere,string nom, Sexe sexe, int age, int poids, int taille,int nbPattes) : base(pere,mere,nom, sexe, age, poids, taille)
         {
-
+            NombrePattes = nbPattes;
         }
     }
 }

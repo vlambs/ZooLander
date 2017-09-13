@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie
 {
-    public abstract class Poissons : AAnimal
+    public abstract class Poissons : AAnimal<Poissons>
     {
-        public Poissons(string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(nom,sexe,age,poids,taille,nbpattes)
+        public Poissons(string nom, Sexe sexe, int age, int poids, int taille) : base(nom,sexe,age,poids,taille)
         {
 
         }
 
-        public Poissons(Poissons pere, Poissons mere, string nom, Sexe sexe, int age, int poids, int taille, int nbpattes) : base(pere,mere,nom, sexe, age, poids, taille, nbpattes)
+        public Poissons(Poissons pere, Poissons mere, string nom, Sexe sexe, int age, int poids, int taille) : base(pere,mere,nom, sexe, age, poids, taille)
         {
 
         }
