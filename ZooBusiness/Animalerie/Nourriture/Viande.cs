@@ -7,7 +7,8 @@ using ZooBusiness.Animalerie.Alimentation;
 
 namespace ZooBusiness.Animalerie.Nourriture
 {
-    public class Viande : INourriture,IAnimal
+    public class Viande : IAnimal
     {
+        public int Prix { get; } = 100;
     }
 }

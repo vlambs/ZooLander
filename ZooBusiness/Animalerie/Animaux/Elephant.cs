@@ -14,11 +14,12 @@ namespace ZooBusiness.Animalerie
     {
         public Elephant(Elephant pere, Elephant mere, string nom, Sexe sexe, int age, int poids, int taille) : base(pere, mere, nom, sexe, age, poids, taille,4)
         {
-
+            Prix = 1000;
         }
 
         public Elephant(string nom, Sexe sexe, int age, int poids, int taille) : base(nom, sexe, age, poids, taille,4)
         {
+            Prix = 1000;
         }
 
         public override void Nourrir(INourriture food)
@@ -32,7 +33,7 @@ namespace ZooBusiness.Animalerie
             Faim++;
         }
 
-        public override void Soigner(ASoins soin)
+        public override void Soigner(ISoin soin)
         {
             Sante++;
         }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZooBusiness.Animalerie.Alimentation;
 using ZooBusiness.Animalerie.Nourriture;
+using ZooBusiness.Animalerie.Prix;
 using ZooBusiness.Animalerie.Soins;
 
 namespace ZooBusiness.Animalerie
@@ -12,9 +13,9 @@ namespace ZooBusiness.Animalerie
     public enum NiveauFaim {Affame, Faim,Bien,Repu}
     public enum NiveauSante { Malade,Blesse,Bien }
     public enum Sexe { Male, Femelle,Hermaphrodite }
-    public abstract class AAnimal<T> 
+    public abstract class AAnimal<T> : IPriceable
     {
-        public static List<AAnimal<T>> Congeneres { get; private set; } = new List<AAnimal<T>>();
+        public static List<AAnimal<T>> Congeneres { get; set; }
 
         public string Nom { get; set; }
         public float Poids { get; set; }
@@ -26,6 +27,8 @@ namespace ZooBusiness.Animalerie
         public Sexe Sexe { get; set; }
         public NiveauFaim Faim { get; set; }
         public NiveauSante Sante { get; set; }
+
+        public int Prix { get; internal set; }
 
         public AAnimal(AAnimal<T> pere,AAnimal<T> mere,string nom, Sexe sexe, int age, int poids, int taille) : this (nom,sexe,age,poids,taille)
         {
@@ -79,7 +82,7 @@ namespace ZooBusiness.Animalerie
 
         public abstract void Nourrir(INourriture food);
 
-        public abstract void Soigner(ASoins soin);
+        public abstract void Soigner(ISoin soin);
 
         public override string ToString()
         {

@@ -14,10 +14,12 @@ namespace ZooBusiness.Animalerie
 
         public Vipere(Vipere pere, Vipere mere, string nom, Sexe sexe, int age, int poids, int taille) : base(pere, mere, nom, sexe, age, poids, taille)
         {
+            Prix = 300;
         }
 
         public Vipere(string nom, Sexe sexe, int age, int poids, int taille) : base(nom, sexe, age, poids, taille)
         {
+            Prix = 300;
         }
 
         public override void Nourrir(INourriture food)
@@ -31,7 +33,7 @@ namespace ZooBusiness.Animalerie
             Faim++;
         }
 
-        public override void Soigner(ASoins soin)
+        public override void Soigner(ISoin soin)
         {
             Sante++;
         }

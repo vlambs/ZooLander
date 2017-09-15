@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooBusiness.Animalerie.Soins
+namespace ZooBusiness.Animalerie.Prix
 {
-    public abstract class ASoins
+    public interface IPriceable
     {
+        int Prix { get; }
     }
 }

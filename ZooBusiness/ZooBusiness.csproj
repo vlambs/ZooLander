@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animalerie\Animaux\RandomUtility.cs" />
+    <Compile Include="Animalerie\Prix\IPriceable.cs" />
     <Compile Include="OrganisationZoo\Controllers\Gestionnaire.cs" />
     <Compile Include="OrganisationZoo\Models\Employes\Directeur.cs" />
     <Compile Include="OrganisationZoo\Models\Employes\Employe.cs" />
@@ -72,13 +73,14 @@
     <Compile Include="Animalerie\Nourriture\INourriture.cs" />
     <Compile Include="Animalerie\Nourriture\Viande.cs" />
     <Compile Include="Animalerie\Soins\Anesthesiant.cs" />
-    <Compile Include="Animalerie\Soins\ASoins.cs" />
+    <Compile Include="Animalerie\Soins\ISoin.cs" />
     <Compile Include="Animalerie\Soins\Bandages.cs" />
     <Compile Include="Animalerie\Soins\Medicaments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StructuresZoo\Models\Aquarium.cs" />
     <Compile Include="StructuresZoo\Models\AStructure.cs" />
     <Compile Include="StructuresZoo\Models\Enclos.cs" />
+    <Compile Include="StructuresZoo\Models\IStructure.cs" />
     <Compile Include="StructuresZoo\Models\Vivarium.cs" />
     <Compile Include="StructuresZoo\Models\Volerie.cs" />
   </ItemGroup>

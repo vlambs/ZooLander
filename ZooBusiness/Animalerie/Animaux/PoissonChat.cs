@@ -13,12 +13,12 @@ namespace ZooBusiness.Animalerie
     {
         public PoissonChat(PoissonChat pere, PoissonChat mere, string nom, Sexe sexe, int age, int poids, int taille) : base(pere, mere, nom, sexe, age, poids, taille)
         {
-            Congeneres.Add(this);
+            Prix = 1500;
         }
 
         public PoissonChat(string nom, Sexe sexe, int age, int poids, int taille) : base(nom, sexe, age, poids, taille)
         {
-            Congeneres.Add(this);
+            Prix = 1500;
         }
 
         public override void Nourrir(INourriture food)
@@ -32,7 +32,7 @@ namespace ZooBusiness.Animalerie
             Faim++;
         }
 
-        public override void Soigner(ASoins soin)
+        public override void Soigner(ISoin soin)
         {
             Sante++;
         }

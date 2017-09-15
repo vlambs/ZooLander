@@ -13,6 +13,7 @@ namespace ZooBusiness.StructuresZoo.Models
         {
             this.Environnement = TypeEnvironnement.Herbe;
             this.Fermeture = TypeFermeture.Barrière;
+            Prix = 1000;
         }
     }
 }

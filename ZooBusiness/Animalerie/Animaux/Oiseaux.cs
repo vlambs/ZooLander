@@ -19,5 +19,10 @@ namespace ZooBusiness.Animalerie
         {
             NombrePattes = nbpattes;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} J'ai {1] pattes.", base.ToString(), NombrePattes);
+        }
     }
 }

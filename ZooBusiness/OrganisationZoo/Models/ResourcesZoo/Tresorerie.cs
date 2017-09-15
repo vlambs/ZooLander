@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooBusiness.Animalerie.Prix;
 
 namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
 {
@@ -20,9 +21,15 @@ namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
             NombreEntrees += 1;
         }
 
-        public void Depenser(int depense)
+        public void Depenser(IPriceable objet)
         {
-            Caisse -= depense;
+            if(Caisse > objet.Prix) { 
+                Caisse -= objet.Prix;
+            }
+            else
+            {
+                throw new ArgumentException("Pas assez d'argent dans la caisse !");
+            }
         }
     }
 }

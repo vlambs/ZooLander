@@ -14,10 +14,12 @@ namespace ZooBusiness.Animalerie
 
         public Lion(Giraffe pere, Giraffe mere, string nom, Sexe sexe, int age, int poids, int taille) : base(pere, mere, nom, sexe, age, poids, taille,4)
         {
+            Prix = 1500;
         }
 
         public Lion(string nom, Sexe sexe, int age, int poids, int taille) : base(nom, sexe, age, poids, taille, 4)
         {
+            Prix = 1500;
         }
 
         public override void Nourrir(INourriture food)
@@ -31,7 +33,7 @@ namespace ZooBusiness.Animalerie
             Faim++;
         }
 
-        public override void Soigner(ASoins soin)
+        public override void Soigner(ISoin soin)
         {
             Sante++;
         }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie.Soins
 {
-    public class Medicaments : ASoins
+    public class Medicaments : ISoin
     {
+        public int Prix { get; } = 25;
     }
 }
