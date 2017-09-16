@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ZooBusiness.Animalerie.Alimentation;
+using ZooBusiness.Animalerie.Animaux;
 using ZooBusiness.Animalerie.Nourriture;
 using ZooBusiness.Animalerie.Soins;
 

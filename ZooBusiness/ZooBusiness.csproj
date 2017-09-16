@@ -82,12 +82,12 @@
     <Compile Include="Animalerie\Soins\Bandages.cs" />
     <Compile Include="Animalerie\Soins\Medicaments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Animalerie\Structures\Models\Aquarium.cs" />
-    <Compile Include="Animalerie\Structures\Models\AStructure.cs" />
-    <Compile Include="Animalerie\Structures\Models\Enclos.cs" />
-    <Compile Include="Animalerie\Structures\Models\IStructure.cs" />
-    <Compile Include="Animalerie\Structures\Models\Vivarium.cs" />
-    <Compile Include="Animalerie\Structures\Models\Volerie.cs" />
+    <Compile Include="Animalerie\Structures\Aquarium.cs" />
+    <Compile Include="Animalerie\Structures\AStructure.cs" />
+    <Compile Include="Animalerie\Structures\Enclos.cs" />
+    <Compile Include="Animalerie\Structures\IStructure.cs" />
+    <Compile Include="Animalerie\Structures\Vivarium.cs" />
+    <Compile Include="Animalerie\Structures\Volerie.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

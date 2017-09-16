@@ -11,10 +11,11 @@ using ZooBusiness.Animalerie.Soins;
 
 namespace ZooBusiness.Animalerie
 {
-    public enum NiveauFaim {Affame, Faim,Bien,Repu}
-    public enum NiveauSante { Malade,Blesse,Bien }
-    public enum Sexe { Male, Femelle,Hermaphrodite }
-    public abstract class AAnimal<T> : IPriceable
+    public enum NiveauFaim { Affame, Faim, Bien, Repu }
+    public enum NiveauSante { Malade, Blesse, Bien }
+    public enum Sexe { Male, Femelle, Hermaphrodite }
+
+    public abstract class AAnimal : IPriceable
     {
 
         public string Nom { get; private set; }
@@ -22,15 +23,15 @@ namespace ZooBusiness.Animalerie
         public int Age { get; private set; }
         public int Taille { get; private set; }
 
-        public AAnimal<T> Pere { get; private set; }
-        public AAnimal<T> Mere { get; private set; }
+        public AAnimal Pere { get; private set; }
+        public AAnimal Mere { get; private set; }
         public Sexe Sexe { get; private set; }
         public NiveauFaim Faim { get; set; }
         public NiveauSante Sante { get; set; }
 
         public int Prix { get; internal set; }
 
-        public AAnimal(AAnimal<T> pere,AAnimal<T> mere,string nom, Sexe sexe, int age, int poids, int taille) : this (nom,sexe,age,poids,taille)
+        public AAnimal(AAnimal pere, AAnimal mere,string nom, Sexe sexe, int age, int poids, int taille) : this (nom,sexe,age,poids,taille)
         {
             Pere = pere;
             Mere = mere;
@@ -48,7 +49,7 @@ namespace ZooBusiness.Animalerie
             this.Faim = NiveauFaim.Bien;
         }
 
-        public AAnimal<T> Reproduction(AAnimal<T> a1, AAnimal<T> a2) 
+        public static T Reproduction<T>(T a1, T a2) where T : AAnimal
         {
             if (a1.Sexe == a2.Sexe)
             {
@@ -61,8 +62,8 @@ namespace ZooBusiness.Animalerie
 
 
             Random rnd = new Random();
-            AAnimal<T> pere;
-            AAnimal<T> mere;
+            T pere;
+            T mere;
 
             if(a1.Sexe == Sexe.Male)
             {
@@ -74,7 +75,7 @@ namespace ZooBusiness.Animalerie
                 pere = a2;
                 mere = a1;
             }
-            return CreateRandomAnimal(pere, mere);
+            return CreateRandomAnimal<T>(pere, mere);
 
         }
 
@@ -82,22 +83,40 @@ namespace ZooBusiness.Animalerie
 
         public abstract void Soigner(ISoin soin);
 
-        public static AAnimal<T> CreateRandomAnimal(AAnimal<T> pere = null,AAnimal<T> mere = null)
+        public void Affamer()
         {
-            
+            Faim--;
+        }
+
+        public void Blesser()
+        {
+            Sante--;
+        }
+
+        public static T CreateRandomAnimal<T>(T pere = null, T mere = null) where T : AAnimal
+        {
             Random random = new Random();
             Array values = Enum.GetValues(typeof(Sexe));
             Sexe randomSexe = (Sexe)values.GetValue(random.Next(values.Length));
 
+            return CreateRandomAnimal<T>(randomSexe,pere,mere);
+        }
 
+        public static T CreateRandomAnimal<T>(Sexe sexe,T pere = null, T mere = null) where T : AAnimal
+        {
+            Random random = new Random();
             int poids = random.Next(1000);
             int size = random.Next(200);
-
-            return (AAnimal<T>)Activator.CreateInstance(typeof(T), new object[] { pere, mere, RandomUtility.RandomString(5), randomSexe, 0, poids, size });
+            Type t = typeof(T);
+            if (pere != null && mere != null)
+            {
+                t = pere.GetType();
+            }
+            return (T)Activator.CreateInstance(t, new object[] { pere, mere, RandomUtility.RandomString(5), sexe, 0, poids, size });
         }
         public override string ToString()
         {
-            return string.Format("Je suis {0} un/une {1} de sexe {4}, je pèse {2} kg et mesure {3} cm.", Nom, GetType().Name, Poids.ToString(), Taille.ToString(),Sexe.ToString());
+            return string.Format("{1} {0} de sexe {4}, pèse {2} kg et mesure {3} cm.", Nom, GetType().Name, Poids.ToString(), Taille.ToString(),Sexe.ToString());
         }
 
         // override object.Equals
@@ -115,7 +134,7 @@ namespace ZooBusiness.Animalerie
                 return false;
             }
 
-            AAnimal<T> a = obj as AAnimal<T>;
+            AAnimal a = obj as AAnimal;
 
             if (this.Nom != a.Nom
                 || Sexe != a.Sexe
@@ -136,6 +155,8 @@ namespace ZooBusiness.Animalerie
             throw new NotImplementedException();
             return base.GetHashCode();
         }
+
+
     }
 
 }

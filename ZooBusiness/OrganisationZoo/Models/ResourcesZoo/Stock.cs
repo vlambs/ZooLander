@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooBusiness.Animalerie;
+using ZooBusiness.Animalerie.Animaux;
 using ZooBusiness.Animalerie.Nourriture;
 using ZooBusiness.Animalerie.Soins;
 using ZooBusiness.StructuresZoo.Models;
@@ -17,6 +19,8 @@ namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
         public List<INourriture> Nourritures { get; private set; } = new List<INourriture>();
 
         public List<IStructure> Structures { get; internal set; } = new List<IStructure>();
+
+        public List<AAnimal> Animaux { get; internal set; } = new List<AAnimal>();
 
         public Stock(Magasinier magasinier)
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZooBusiness.Animalerie.Alimentation;
+using ZooBusiness.Animalerie.Animaux;
 using ZooBusiness.Animalerie.Nourriture;
 using ZooBusiness.Animalerie.Soins;
 
@@ -24,7 +25,7 @@ namespace ZooBusiness.Animalerie
 
         public override void Nourrir(INourriture food)
         {
-            if (!(food is IAnimal))
+            if (!(food is Alimentation.IAnimal))
             {
                 throw new WrongDietException();
 

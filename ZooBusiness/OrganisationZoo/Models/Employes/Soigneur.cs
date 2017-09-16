@@ -15,12 +15,12 @@ namespace ZooBusiness.OrganisationZoo.Models
         {
             
         }
-        public void Nourrir<T>(AAnimal<T> animal,INourriture food)
+        public void Nourrir(AAnimal animal,INourriture food)
         {
             animal.Nourrir(food);
         }
 
-        public void Soigner<T>(AAnimal<T> animal, ISoin soin)
+        public void Soigner(AAnimal animal, ISoin soin)
         {
             animal.Soigner(soin);
         }

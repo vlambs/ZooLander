@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZooBusiness.Animalerie;
+using ZooBusiness.Animalerie.Animaux;
 
 namespace ZooBusiness.StructuresZoo.Models
 {
 
 
-    public abstract class AStructure<T> : IStructure where T : AAnimal<T>
+    public abstract class AStructure<T> : IStructure where T : AAnimal
     {
         private static int id = 0;
 
@@ -24,6 +25,8 @@ namespace ZooBusiness.StructuresZoo.Models
         public EtatStructure Etat { get; protected set; } = EtatStructure.Parfait;
 
         public int Prix { get; protected set; }
+
+        IEnumerable<AAnimal> IStructure.Animaux => Animaux;
 
         public AStructure()
         {
@@ -47,5 +50,14 @@ namespace ZooBusiness.StructuresZoo.Models
             }
         }
 
+        public void AjouterAnimal(AAnimal animal)
+        {
+            Animaux.Add((T)animal);
+        }
+
+        public void RetirerAnimal(AAnimal animal)
+        {
+            Animaux.Remove((T)animal);
+        }
     }
 }

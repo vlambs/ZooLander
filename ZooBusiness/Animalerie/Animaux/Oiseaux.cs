@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooBusiness.Animalerie.Animaux;
 
 namespace ZooBusiness.Animalerie
 {
-    public abstract class Oiseaux : AAnimal<Oiseaux>
+    public abstract class Oiseaux : AAnimal
     {
         public int NombrePattes { get; set; }
 
@@ -22,7 +23,7 @@ namespace ZooBusiness.Animalerie
 
         public override string ToString()
         {
-            return string.Format("{0} J'ai {1] pattes.", base.ToString(), NombrePattes);
+            return string.Format("{0} J'ai {1} pattes.", base.ToString(), NombrePattes);
         }
     }
 }
