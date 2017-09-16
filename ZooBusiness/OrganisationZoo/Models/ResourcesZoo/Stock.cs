@@ -17,5 +17,10 @@ namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
         public List<INourriture> Nourritures { get; private set; } = new List<INourriture>();
 
         public List<IStructure> Structures { get; internal set; } = new List<IStructure>();
+
+        public Stock(Magasinier magasinier)
+        {
+            Magasinier = magasinier;
+        }
     }
 }

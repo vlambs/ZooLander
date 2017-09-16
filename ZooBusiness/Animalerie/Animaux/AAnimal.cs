@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZooBusiness.Animalerie.Alimentation;
+using ZooBusiness.Animalerie.Animaux;
 using ZooBusiness.Animalerie.Nourriture;
 using ZooBusiness.Animalerie.Prix;
 using ZooBusiness.Animalerie.Soins;
@@ -15,16 +16,15 @@ namespace ZooBusiness.Animalerie
     public enum Sexe { Male, Femelle,Hermaphrodite }
     public abstract class AAnimal<T> : IPriceable
     {
-        public static List<AAnimal<T>> Congeneres { get; set; }
 
-        public string Nom { get; set; }
-        public float Poids { get; set; }
-        public int Age { get; set; }
-        public int Taille { get; set; }
+        public string Nom { get; private set; }
+        public float Poids { get; private set; }
+        public int Age { get; private set; }
+        public int Taille { get; private set; }
 
-        public AAnimal<T> Pere { get; set; }
-        public AAnimal<T> Mere { get; set; }
-        public Sexe Sexe { get; set; }
+        public AAnimal<T> Pere { get; private set; }
+        public AAnimal<T> Mere { get; private set; }
+        public Sexe Sexe { get; private set; }
         public NiveauFaim Faim { get; set; }
         public NiveauSante Sante { get; set; }
 
@@ -46,19 +46,17 @@ namespace ZooBusiness.Animalerie
             
             Sante = NiveauSante.Bien;
             this.Faim = NiveauFaim.Bien;
-
-            Congeneres.Add(this);
         }
 
         public AAnimal<T> Reproduction(AAnimal<T> a1, AAnimal<T> a2) 
         {
             if (a1.Sexe == a2.Sexe)
             {
-                throw new ArgumentException("Deux animaux du mêmes sexe ne peuvent se reproduire !");
+                throw new SameGenderException();
             }
             if (a1.Equals(a2))
             {
-                throw new ArgumentException("Un animal ne peut se reproduire avec lui-même");
+                throw new SameAnimalException();
             }
 
 
@@ -76,7 +74,7 @@ namespace ZooBusiness.Animalerie
                 pere = a2;
                 mere = a1;
             }
-            return (AAnimal<T>)Activator.CreateInstance(typeof(T), new object[] { pere,mere });
+            return CreateRandomAnimal(pere, mere);
 
         }
 
@@ -84,9 +82,22 @@ namespace ZooBusiness.Animalerie
 
         public abstract void Soigner(ISoin soin);
 
+        public static AAnimal<T> CreateRandomAnimal(AAnimal<T> pere = null,AAnimal<T> mere = null)
+        {
+            
+            Random random = new Random();
+            Array values = Enum.GetValues(typeof(Sexe));
+            Sexe randomSexe = (Sexe)values.GetValue(random.Next(values.Length));
+
+
+            int poids = random.Next(1000);
+            int size = random.Next(200);
+
+            return (AAnimal<T>)Activator.CreateInstance(typeof(T), new object[] { pere, mere, RandomUtility.RandomString(5), randomSexe, 0, poids, size });
+        }
         public override string ToString()
         {
-            return string.Format("Je suis {0} un/une {1} de sexe {4}, je pèse {2} kg et mesure {3}.", Nom, GetType().Name, Poids.ToString(), Taille.ToString(),Sexe.ToString());
+            return string.Format("Je suis {0} un/une {1} de sexe {4}, je pèse {2} kg et mesure {3} cm.", Nom, GetType().Name, Poids.ToString(), Taille.ToString(),Sexe.ToString());
         }
 
         // override object.Equals

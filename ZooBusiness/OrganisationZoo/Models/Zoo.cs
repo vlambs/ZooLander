@@ -12,9 +12,9 @@ using ZooBusiness.StructuresZoo.Models;
 
 namespace ZooBusiness.OrganisationZoo.Controllers
 {
-    public class Gestionnaire
+    public class Zoo
     {
-        public List<Visiteur> Visiteurs { get; private set; }
+        public List<Visiteur> Visiteurs { get; private set; } = new List<Visiteur>();
 
         public Stock Stock { get; private set; }
 
@@ -24,7 +24,24 @@ namespace ZooBusiness.OrganisationZoo.Controllers
 
         public List<IStructure> Structures { get { return Stock.Structures; } }
 
-        #region GestionAnimal
+        public Zoo(Stock stock, Tresorerie tresorerie,Directeur directeur)
+        {
+            Stock = stock;
+            Tresorerie = tresorerie;
+            Directeur = directeur;
+        }
+
+        #region Structure
+        public void ReparerStructure<T>(Entretien entretien,AStructure<T> structure) where T : AAnimal<T>
+        {
+            entretien.Reparer(structure);
+        }
+
+        public AStructure<T> GetStructure<T>(T animal) where T : AAnimal<T>
+        {
+            var typedStructures = Structures.Where(s => s is AStructure<T>).Select(s => (AStructure<T>)s);
+            return typedStructures.Where(s => s.Animaux.Contains(animal)).FirstOrDefault();
+        }
 
         public void CommanderStructure<T>(AStructure<T> structure) where T : AAnimal<T>
         {
@@ -38,6 +55,11 @@ namespace ZooBusiness.OrganisationZoo.Controllers
 
             }
         }
+        #endregion
+
+        #region GestionAnimal
+
+
         public void CommanderAnimal<T>(T animal, AStructure<T> structure) where T : AAnimal<T>
         {
             try
@@ -51,15 +73,27 @@ namespace ZooBusiness.OrganisationZoo.Controllers
             }
         }
 
-        public void Soigner<T>(Soigneur soigneur, AAnimal<T> animal, ISoin soin)
+        public void Soigner<T>(Soigneur soigneur, T animal, ISoin soin) where T : AAnimal<T>
         {
-            if (Stock.Soins.Remove(soin)) { soigneur.Soigner(animal, soin); }
+            if (Stock.Soins.Remove(soin)) { try { soigneur.Soigner(animal, soin); } catch { GetStructure(animal).Casser(); } }
+        }
+
+        public void Reproduire<T>(T a1, T a2) where T : AAnimal<T>
+        {
+            var structure = GetStructure(a1);
+            if (!structure.Animaux.Contains(a2))
+            {
+                throw new ReproductionNotAllowedException();
+            }
+            structure.Animaux.Add((T)typeof(T).GetMethod("Reproduction").Invoke(null, new object[] { a1, a2 }));
         }
 
 
         public void Nourrir<T>(Soigneur soigneur, AAnimal<T> animal, INourriture food)
         {
-            if (Stock.Nourritures.Remove(food)) { soigneur.Nourrir(animal, food); }
+            if (Stock.Nourritures.Remove(food)) {
+                    soigneur.Nourrir(animal, food);
+                }
         }
         #endregion
 

@@ -26,12 +26,14 @@ namespace ZooBusiness.Animalerie
         {
             if(!(food is IVegetal))
             {
-                throw new ArgumentException("Mauvais régime");
+                throw new WrongDietException();
 
             }
 
             Faim++;
         }
+
+
 
         public override void Soigner(ISoin soin)
         {

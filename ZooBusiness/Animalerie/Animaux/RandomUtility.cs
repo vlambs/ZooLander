@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooBusiness.Animalerie.Animaux
 {
-    class RandomUtility
+    public static class RandomUtility
     {
         
         public static string RandomString(int length)

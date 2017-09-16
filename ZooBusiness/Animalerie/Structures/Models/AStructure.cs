@@ -13,10 +13,7 @@ namespace ZooBusiness.StructuresZoo.Models
     {
         private static int id = 0;
 
-        public static List<AStructure<T>> Structures { get; private set; } = new List<AStructure<T>>();
-
         public int Id { get; private set; }
-
 
         public List<T> Animaux { get; protected set; } = new List<T>();
 
@@ -31,6 +28,23 @@ namespace ZooBusiness.StructuresZoo.Models
         public AStructure()
         {
             Id = ++id;
+        }
+
+        public void Reparer()
+        {
+            if (Etat != EtatStructure.Parfait)
+            {
+                Etat++;
+            }
+           
+        }
+
+        public void Casser()
+        {
+            if (Etat != EtatStructure.Delabre)
+            {
+                Etat--;
+            }
         }
 
     }

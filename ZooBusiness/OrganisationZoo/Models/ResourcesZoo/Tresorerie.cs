@@ -28,8 +28,14 @@ namespace ZooBusiness.OrganisationZoo.Models.ResourcesZoo
             }
             else
             {
-                throw new ArgumentException("Pas assez d'argent dans la caisse !");
+                throw new NotEnoughMoneyException();
             }
+        }
+
+        public Tresorerie(Tresorier tresorier,int baseSomme)
+        {
+            Tresorier = tresorier;
+            Caisse = baseSomme;
         }
     }
 }

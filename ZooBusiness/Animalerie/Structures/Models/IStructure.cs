@@ -15,5 +15,9 @@ namespace ZooBusiness.StructuresZoo.Models
 
         EtatStructure Etat { get; }
 
+        void Reparer();
+
+        void Casser();
+
     }
 }

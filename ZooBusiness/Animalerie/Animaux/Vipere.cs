@@ -26,7 +26,7 @@ namespace ZooBusiness.Animalerie
         {
             if (!(food is IAnimal))
             {
-                throw new ArgumentException("Mauvais régime");
+                throw new WrongDietException();
 
             }
 
