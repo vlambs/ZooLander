@@ -50,15 +50,10 @@ namespace ZooBusiness.OrganisationZoo.Controllers
 
         public void CommanderStructure<T>(AStructure<T> structure) where T : AAnimal
         {
-            try
-            {
+
                 Tresorerie.Depenser(structure);
                 Stock.Structures.Add(structure);
-            }
-            catch
-            {
 
-            }
         }
         #endregion
 
