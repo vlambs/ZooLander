@@ -24,6 +24,8 @@ namespace ZooLander
                 myTimer.Elapsed += async (sender, e) => Routine();
                 myTimer.Start();
 
+
+                Console.WriteLine("************ Test Initialisation ************");
                 //ELEPHANTS
                 //Création d'une structure enclos
                 zoo.ZooLander.CommanderStructure(new Enclos());
@@ -83,6 +85,9 @@ namespace ZooLander
                 zoo.ZooLander.CommanderStructure(new Volerie());
                 Volerie volerieTest = (Volerie)zoo.ZooLander.Structures[zoo.ZooLander.Structures.Count - 1];
                 //Ajout évènements utilisateur
+
+
+                Console.WriteLine("************ Fin Test Initialisation ************");
             }
             catch (Exception e)
             {

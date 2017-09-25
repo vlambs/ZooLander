@@ -57,6 +57,11 @@ namespace ZooBusiness.OrganisationZoo.Controllers
         }
         #endregion
 
+        public void NouveauVisiteur(Visiteur v)
+        {
+            Tresorerie.ComptabiliserEntree(v.AcheterTicket());
+        }
+
         #region GestionAnimal
 
 

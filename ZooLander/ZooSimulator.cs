@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZooBusiness.OrganisationZoo.Controllers;
+using ZooBusiness.OrganisationZoo.Models.ResourcesZoo;
 
 namespace ZooLander
 {
@@ -106,9 +107,16 @@ namespace ZooLander
             }
             compteAvant =  ZooLander.Tresorerie.Caisse;
             Console.WriteLine(string.Format("{0} d'entrées ont été vendues. Argent: {1}. Gain: ", num, ZooLander.Tresorerie.Caisse.ToString(), (ZooLander.Tresorerie.Caisse - compteAvant).ToString()));*/
-            foreach (var v in ZooLander.Visiteurs)
+            prob = gen.Next(100);
+            Console.WriteLine("Un Nouveau Visiteur dans le Zoo !");
+            if (prob <= 50)
             {
-                v.AcheterTicket();
+                ZooLander.NouveauVisiteur(new Visiteur(15));
+                
+            }
+            else
+            {
+                ZooLander.NouveauVisiteur(new Visiteur(17));
             }
             Console.WriteLine();
             Console.WriteLine("************* Fin Routine *************");
